@@ -1,0 +1,13 @@
+<h1>Doctor Profile: <%= @doctor.first_name %> <%= @doctor.last_name %></h1>
+
+<ul>
+  <li>Name: <%= @doctor.first_name %> <%= @doctor.last_name %></li>
+  <li>Gender: <%= @doctor.gender %></li>
+  <li>Qualification: <%= @doctor.qualification %></li>
+  <li>Specialty: <%= @doctor.specialty %></li>
+</ul>
+
+<div class="controls">
+  <%= link_to("Edit", "/doctors/#{@doctor.id}/edit") %>
+  <%= link_to("Delete", "/doctors/#{@doctor.id}", method: :delete, data: { confirm: "Are you sure?" }) %>
+</div>

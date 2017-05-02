@@ -1,0 +1,9 @@
+<h1>All Services</h1>
+
+<ul>
+  <% @all_services.each do |service| %>
+    <li>
+      <%= link_to(service.name, "/services/#{service.id}") %>
+    </li>
+  <% end %>
+</ul>

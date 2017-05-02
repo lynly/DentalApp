@@ -1,0 +1,24 @@
+<%= form_for @doctor do |f| %>
+  <p>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, required: true %>
+  </p>
+  <p>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, required: true %>
+  </p>
+  <p>
+    <%= f.label :gender %>
+    <%= f.text_field :gender, required: true %>
+  </p>
+  <p>
+    <%= f.label :qualification %>
+    <%= f.text_field :qualification, required: true %>
+  </p>
+  <p>
+    <%= f.label :specialty %>
+    <%= f.text_field :specialty, required: true %>
+  </p>
+
+  <%= f.submit %>
+<% end %>
