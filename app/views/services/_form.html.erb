@@ -1,0 +1,12 @@
+<%= form_for @service do |f| %>
+<p>
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true %>
+</p>
+<p>
+    <%= f.label :category_id %><br />
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
+</p>
+
+<%= f.submit %>
+<% end %>

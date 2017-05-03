@@ -4,8 +4,23 @@
   <li>Name: <%= @doctor.first_name %> <%= @doctor.last_name %></li>
   <li>Gender: <%= @doctor.gender %></li>
   <li>Qualification: <%= @doctor.qualification %></li>
-  <li>Specialty: <%= @doctor.specialty %></li>
+  <li>Specialty:
+    <% @doctor.categories.uniq.each do |category| %>
+      <a><%= category.name  %></a>
+    <% end %>
+  </li>
 </ul>
+
+
+<ul> Services:
+  <% @doctor.services.each do |service| %>
+    <li>
+      <%= service.name %>
+    </li>
+  <% end %>
+</ul>
+
+
 
 <div class="controls">
   <%= link_to("Edit", "/doctors/#{@doctor.id}/edit") %>

@@ -7,12 +7,12 @@ class DoctorsController < ApplicationController
   def show
     # Find one doctor
     @doctor = Doctor.find_by(id: params["id"])
-    # raise "hell"
   end
 
   def new
     # Shows a form
     @doctor = Doctor.new
+    @all_categories = Category.all
   end
 
   def create
@@ -24,6 +24,8 @@ class DoctorsController < ApplicationController
   def edit
     # Shows a form (with prefilled values)
     @doctor = Doctor.find_by(id: params["id"])
+    @all_categories = Category.all
+
   end
 
   def update
@@ -42,7 +44,7 @@ class DoctorsController < ApplicationController
 
   private
     def doctor_params
-      params.require(:doctor).permit(:first_name, :last_name, :gender, :qualification, :specialty)
+      params.require(:doctor).permit(:first_name, :last_name, :gender, :qualification, :specialty, :service_id)
     end
 
 end

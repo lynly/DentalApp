@@ -76,4 +76,7 @@ c4.services << s16 << s17 << s18 << s19
 c5.services << s20 << s21 << s22
 c6.services << s23 << s24
 
+
+
 puts "Category Count: #{ Category.all.count }"
+# puts "Category: #{d1.services(:category_id)}"

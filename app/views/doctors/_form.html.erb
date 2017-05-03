@@ -1,24 +1,33 @@
 <%= form_for @doctor do |f| %>
-  <p>
+<p>
     <%= f.label :first_name %>
     <%= f.text_field :first_name, required: true %>
-  </p>
-  <p>
+</p>
+<p>
     <%= f.label :last_name %>
     <%= f.text_field :last_name, required: true %>
-  </p>
-  <p>
+</p>
+<p>
     <%= f.label :gender %>
     <%= f.text_field :gender, required: true %>
-  </p>
-  <p>
+</p>
+<p>
     <%= f.label :qualification %>
     <%= f.text_field :qualification, required: true %>
-  </p>
-  <p>
+</p>
+<div>
     <%= f.label :specialty %>
-    <%= f.text_field :specialty, required: true %>
-  </p>
+    <ul>
+      <% @all_categories.each do |category| %>
+          <li>
+            <%= check_box_tag 'category_ids[]', category.id -%>
+            <%= category.name -%>
+          </li>
+      <% end %>
+    </ul>
+</div>
 
-  <%= f.submit %>
+
+
+<%= f.submit %>
 <% end %>
