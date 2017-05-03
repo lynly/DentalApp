@@ -4,9 +4,12 @@
     <%= f.text_field :name, required: true %>
 </p>
 <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description, required: true %>
+</p>
+<p>
     <%= f.label :category_id %><br />
     <%= f.collection_select :category_id, Category.all, :id, :name %>
 </p>
-
 <%= f.submit %>
 <% end %>

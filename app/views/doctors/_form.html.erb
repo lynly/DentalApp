@@ -9,7 +9,7 @@
 </p>
 <p>
     <%= f.label :gender %>
-    <%= f.text_field :gender, required: true %>
+    <%= f.select :gender, %w{Male Female}, :prompt => 'Select', required: true, placeholder: 'Gender', class: 'form-control' %>
 </p>
 <p>
     <%= f.label :qualification %>
