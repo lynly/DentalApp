@@ -20,6 +20,12 @@ class DoctorsController < ApplicationController
   def create
     # Handles the submission of a form
     doctor = Doctor.create( doctor_params() )
+    params["doctor"]["categories"].each do |c|
+      if c.present?
+        category = Category.find(c)
+        doctor.services << category.services
+      end
+    end
     redirect_to doctor_path(doctor)
   end
 
