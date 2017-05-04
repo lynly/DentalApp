@@ -7,7 +7,6 @@ class ServicesController < ApplicationController
   def show
     # Find one service
     @service = Service.find_by(id: params["id"])
-
   end
 
   def new
@@ -39,7 +38,6 @@ class ServicesController < ApplicationController
 
   private
     def service_params
-      params.require(:service).permit(:name, :description, :category_id)
+      params.require(:service).permit(:name, :description, :doctor_id, :category_id)
     end
-
 end

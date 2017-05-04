@@ -6,20 +6,10 @@
   <li>Qualification: <%= @doctor.qualification %></li>
   <li>Specialty:
     <% @doctor.categories.uniq.each do |category| %>
-      <a><%= category.name  %></a>
+      <%= link_to category.name, services_path %>
     <% end %>
   </li>
 </ul>
-
-
-<ul> Services:
-  <% @doctor.services.each do |service| %>
-    <li>
-      <%= service.name %>
-    </li>
-  <% end %>
-</ul>
-
 
 
 <div class="controls">

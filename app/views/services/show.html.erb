@@ -1,5 +1,12 @@
 <h1><%= @service.name %></h1>
 <p>Category: <%= @service.category.name %> </p>
+<p>Specialising Doctor:
+
+  <% @service.doctors.uniq.each do |doctor | %>
+    <%= doctor.first_name %>
+  <% end %>
+
+</p>
 
 <p><%= @service.description %></p>
 

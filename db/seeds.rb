@@ -68,7 +68,29 @@ d1.services << s1 << s2 << s3 << s4 << s5 << s6
 d2.services << s7 << s8 << s9 << s10 << s11 << s23 << s24
 d3.services << s1 << s2 << s3 << s4 << s5 << s6 << s7 << s8 << s9 << s10 << s11 << s12 << s13 << s14 << s15
 
+s1.doctors << d1 << d3
+s2.doctors << d1 << d3
+s3.doctors << d1 << d3
+s4.doctors << d1 << d3
+s5.doctors << d1 << d3
+s6.doctors << d1 << d3
+s7.doctors << d2 << d3
+s8.doctors << d2 << d3
+s9.doctors << d2 << d3
+s10.doctors << d2 << d3
+s11.doctors << d2 << d3
+s12.doctors << d3
+s13.doctors << d3
+s14.doctors << d3
+s15.doctors << d3
+s23.doctors << d2
+s24.doctors << d2
+
 puts "Service Count: #{ Service.all.count }"
+
+s5.doctors.uniq.each do |doctor|
+  puts "Doctor Name: #{ doctor.first_name} #{ doctor.last_name }"
+end
 
 Category.destroy_all
 
