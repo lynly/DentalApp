@@ -1,6 +1,5 @@
 class ServicesController < ApplicationController
-    before_action :authorise, only: [:new, :create]
-    
+
   def index
     # Find all services
     @all_services = Service.all

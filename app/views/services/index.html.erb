@@ -1,17 +1,29 @@
-<table>
-  <tr>
-    <th>Service</th>
-    <th>Category</th>
-    <th></th>
-  </tr>
-<% for service in @all_services.sort_by(&:category_id) %>
-  <tr>
-    <td><%= link_to(service.name, "/services/#{service.id}") %></td>
-    <td><%= service.category.name %></td>
-    <td><%= link_to "Edit", edit_service_path(service) %></td>
-    <td><%= link_to("Delete", service, method: :delete, data: { confirm: "Are you sure?" }) %></td>
-  </tr>
-<% end %>
-</table>
+<div class="row">
+  <div class="col s9">
+    <h4>What we do</h4>
+  </div>
+  <div class="col s3">
+    <a class="waves-effect waves-light btn" href="/services/new">New Service</a>
+  </div>
+</div>
 
-<p><%= link_to "New Service", new_service_path %></p>
+
+<table class="highlight">
+  <thead>
+    <tr>
+      <th>Service</th>
+      <th>Category</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for service in @all_services.sort_by(&:category_id) %>
+      <tr>
+        <td><%= link_to(service.name, "/services/#{service.id}") %></td>
+        <td><%= service.category.name %></td>
+        <td><%= link_to "Edit", edit_service_path(service) %></td>
+        <td><%= link_to("Delete", service, method: :delete, data: { confirm: "Are you sure?" }) %></td>
+      </tr>
+    <% end %>
+  <tbody>
+</table>

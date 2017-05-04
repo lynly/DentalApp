@@ -1,33 +1,42 @@
-<%= form_for @doctor do |f| %>
-<p>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name, required: true %>
-</p>
-<p>
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name, required: true %>
-</p>
-<p>
-    <%= f.label :gender %>
-    <%= f.select :gender, %w{Male Female}, :prompt => 'Select', required: true, placeholder: 'Gender', class: 'form-control' %>
-</p>
-<p>
-    <%= f.label :qualification %>
-    <%= f.text_field :qualification, required: true %>
-</p>
-<div>
-    <%= f.label :specialty %>
-    <ul>
-      <% @all_categories.each do |category| %>
-          <li>
-            <%= check_box_tag 'category_ids[]', category.id -%>
-            <%= category.name -%>
-          </li>
-      <% end %>
-    </ul>
-</div>
+<div class="row">
+  <form class="col s12">
+    <%= form_for @doctor do |f| %>
+      <div class="row">
+        <div class="input-field col s6">
+          <%= f.text_field :first_name, required: true, placeholder: 'First Name' %>
+        </div>
+        <div class="input-field col s6">
+          <%= f.text_field :last_name, required: true, placeholder: 'Last Name'  %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <%= f.select :gender, %w{Male Female}, :prompt => 'Select', required: true, placeholder: 'Gender', class: 'form-control' %>
+          <label>Gender</label>
+        </div>
+        <div class="input-field col s6">
+          <%= f.text_field :qualification, required: true, placeholder: 'Qualification'%>
+        </div>
+      </div>
 
+      <div class="row">
 
+        <div class="input-field col s12">
+          <select multiple>
+            <option value="" disabled selected>Select</option>
+            <option value="1">General Dentistry</option>
+            <option value="2">Cosmetic Dentistry</option>
+            <option value="3">Implant Dentistry</option>
+            <option value="4">Orthodontics</option>
+            <option value="5">Advanced Services</option>
+            <option value="6">Aesthetic Services</option>
+          </select>
+          <label>Specialties</label>
+        </div>
+      </div>
 
-<%= f.submit %>
+      <%= f.submit %>
 <% end %>
+
+  </form>
+</div>

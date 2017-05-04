@@ -10,16 +10,26 @@
 
   <body>
 
-    <nav>
 
-      <% if @current_doctor %>
-        <%= link_to 'Doctors', '/doctors' %> | <%= link_to 'Services', '/services' %>
-        <%= @current_doctor.first_name %> | <%= link_to "Logout", '/logout' %>
-      <% end %>
 
+    <nav class="teal lighten-3">
+      <div class="container">
+        <a href="/" class="brand-logo"></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><%= link_to "Services", "/services" %></li>
+              <li><%= link_to "Doctors", "/doctors" %></li>
+          </ul>
+      </div>
     </nav>
 
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
+
+
+
+
+
 
   </body>
 </html>
