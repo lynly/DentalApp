@@ -3,7 +3,7 @@
 <p>Specialising Doctor:
 
   <% @service.doctors.uniq.each do |doctor | %>
-    <%= doctor.first_name %>
+    <%= link_to(doctor.first_name, "/doctors/#{doctor.id}") %>  <%= link_to(doctor.last_name, "/doctors/#{doctor.id}") %>
   <% end %>
 
 </p>

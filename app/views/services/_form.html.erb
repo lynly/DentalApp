@@ -4,12 +4,23 @@
     <%= f.text_field :name, required: true %>
 </p>
 <p>
-    <%= f.label :description %><br />
-    <%= f.text_field :description, required: true %>
+    <%= f.label "Specialising Doctor" %><br />
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
 </p>
 <p>
     <%= f.label :category_id %><br />
     <%= f.collection_select :category_id, Category.all, :id, :name %>
 </p>
+
+<p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description, required: true %>
+</p>
+
 <%= f.submit %>
+<% end %>
+
+
+<% @service.doctors.uniq.each do |doctor | %>
+<%= link_to(doctor.first_name, "/doctors/#{doctor.id}") %>  <%= link_to(doctor.last_name, "/doctors/#{doctor.id}") %>
 <% end %>

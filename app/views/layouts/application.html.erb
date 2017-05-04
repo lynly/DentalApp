@@ -11,9 +11,12 @@
   <body>
 
     <nav>
-      <a href="/doctors/">Doctors</a> |
-      <a href="/services/">Services</a> |
-      <a href="#">Profile</a> |
+
+      <% if @current_doctor %>
+        <%= link_to 'Doctors', '/doctors' %> | <%= link_to 'Services', '/services' %>
+        <%= @current_doctor.first_name %> | <%= link_to "Logout", '/logout' %>
+      <% end %>
+
     </nav>
 
     <%= yield %>

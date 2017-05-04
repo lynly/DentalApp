@@ -5,7 +5,8 @@ d1 = Doctor.create({
   last_name: "O’Sullivan",
   gender: "Male",
   qualification: "BDSc. (Syd. Uni.)",
-  specialty: "General Dentistry"
+  specialty: "General Dentistry",
+  email: "r.osullivan@dentist.com.au"
 })
 
 d2 = Doctor.create({
@@ -13,7 +14,8 @@ d2 = Doctor.create({
   last_name: "Williams",
   gender: "Female",
   qualification: "BDSc. (Hons)",
-  specialty: "Cosmetic Dentistry, Aesthetic Services"
+  specialty: "Cosmetic Dentistry, Aesthetic Services",
+  email: "l.williams@dentist.com.au"
 })
 
 d3 = Doctor.create({
@@ -21,7 +23,8 @@ d3 = Doctor.create({
   last_name: "Harley",
   gender: "Male",
   qualification: "B.BioMol.Sc. (Hons I) BDSc. (Hons I) FICOI",
-  specialty: "General Dentistry, Cosmetic Dentistry, Implant Dentistry"
+  specialty: "General Dentistry, Cosmetic Dentistry, Implant Dentistry",
+  email: "o.harley@dentist.com.au"
 })
 
 puts "Doctor Count: #{ Doctor.all.count }"

@@ -1,4 +1,6 @@
 class ServicesController < ApplicationController
+    before_action :authorise, only: [:new, :create]
+    
   def index
     # Find all services
     @all_services = Service.all
@@ -22,6 +24,7 @@ class ServicesController < ApplicationController
   def edit
     # Shows a form (with prefilled values)
     @service = Service.find_by(id: params["id"])
+
   end
 
   def update
