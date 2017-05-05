@@ -21,11 +21,9 @@
     <label>Specialty</label>
     <%= collection_select(:doctor, :categories, Category.all, :id, :name,  {:prompt => "Select", :class => "input-field col s12"}, {:multiple => true}) %>
 
-
 <!-- none closing div it is intentional? -->
-      <div class="row">
-
-    <button class="btn waves-effect waves-light" type="submit" name="action"><%= f.submit %></button>
+        <button class="btn waves-effect waves-light" type="submit" name="action"><%= f.submit %></button>
 <% end %>
+
 
 </div>

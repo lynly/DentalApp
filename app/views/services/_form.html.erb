@@ -10,8 +10,8 @@
         </div>
     </div>
 
-          <label>Specialising Doctor</label>
-          <%= collection_select(:service, :doctors, Doctor.all, :id, :last_name, {:prompt => "Select", :class => "input-field col s12"}, {:multiple => true}) %>
+    <label>Specialising Doctor</label>
+    <%= collection_select(:service, :doctors, Doctor.all, :id, :last_name, {:prompt => "Select", :class => "input-field col s12"}, {:multiple => true}) %>
 
     <div class="row">
         <div class="input-field col s12">

@@ -6,6 +6,7 @@ class ServicesController < ApplicationController
   end
 
   def show
+    # raise
     # Find one service
     @service = Service.find_by(id: params["id"])
   end
@@ -17,6 +18,12 @@ class ServicesController < ApplicationController
 
   def create
     service = Service.create( service_params() )
+    params["service"]["doctors"].each do |d|
+      if d.present?
+        doctor = Doctor.find(d)
+        service.doctors << doctor
+      end
+    end
     redirect_to service_path(service)
   end
 
