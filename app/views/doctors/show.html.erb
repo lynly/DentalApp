@@ -1,9 +1,9 @@
 <h4>Dr: <%= @doctor.first_name %> <%= @doctor.last_name %></h4>
 
-<ul>
-  <li>Gender: <%= @doctor.gender %></li>
-  <li>Qualification: <%= @doctor.qualification %></li>
-  <li>Specialty:
+<ul class="collection">
+  <li class="collection-item"><strong>Gender:</strong> <%= @doctor.gender %></li>
+  <li class="collection-item"><strong>Qualification:</strong> <%= @doctor.qualification %></li>
+  <li class="collection-item"><strong>Specialty:</strong>
     <% @doctor.categories.uniq.each do |category| %>
       <%= link_to category.name, services_path %>
     <% end %>

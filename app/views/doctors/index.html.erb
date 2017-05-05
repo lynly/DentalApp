@@ -7,10 +7,12 @@
   </div>
 </div>
 
-<ul>
-  <% @all_doctors.sort_by(&:first_name).each do |doctor| %>
-    <li>
-      <%= link_to(doctor.first_name, "/doctors/#{doctor.id}") %>  <%= link_to(doctor.last_name, "/doctors/#{doctor.id}") %>
-    </li>
-  <% end %>
-</ul>
+<div class="collection">
+  <ul>
+    <% @all_doctors.sort_by(&:first_name).each do |doctor| %>
+      <li class="collection-item">
+        <%= link_to(doctor.first_name, "/doctors/#{doctor.id}") %>  <%= link_to(doctor.last_name, "/doctors/#{doctor.id}") %>
+      </li>
+    <% end %>
+  </ul>
+</div>

@@ -7,7 +7,7 @@ class DoctorsController < ApplicationController
 
   def show
     # Find one doctor
-    
+
     @doctor = Doctor.find_by(id: params["id"])
     @all_categories = Category.all
   end
