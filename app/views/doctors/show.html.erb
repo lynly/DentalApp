@@ -12,6 +12,6 @@
 
 
 <div class="controls">
-  <%= link_to("Edit", "/doctors/#{@doctor.id}/edit") %>
-  <%= link_to("Delete", "/doctors/#{@doctor.id}", method: :delete, data: { confirm: "Are you sure?" }) %>
+  <button class="btn waves-effect waves-light" type="button" name="action"><%= link_to("Delete", "/doctors/#{@doctor.id}", method: :delete, data: { confirm: "Are you sure?" }) %></button>
+    <button class="btn waves-effect waves-light" type="button" name="action"><%= link_to("Edit", "/doctors/#{@doctor.id}/edit") %></button>
 </div>

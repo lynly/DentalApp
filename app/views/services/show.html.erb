@@ -1,16 +1,22 @@
 <h4><%= @service.name %></h4>
-  <div class="collection">
-    <p class="collection-item"><strong>Category:</strong> <%= @service.category.name %> </p>
-    <p class="collection-item"><strong>Specialising Doctor:</strong>
+<div class="collection">
+    <p class="collection-item">
+        <strong>Category:</strong>
+        <%= @service.category.name %>
+    </p>
+    <p class="collection-item">
+        <strong>Specialising Doctor:</strong>
 
-      <% @service.doctors.uniq.each do |doctor | %>
-        <%= link_to(doctor.first_name, "/doctors/#{doctor.id}") %>  <%= link_to(doctor.last_name, "/doctors/#{doctor.id}") %>
-      <% end %>
+        <% @service.doctors.uniq.each do |doctor | %>
+        <%= link_to(doctor.first_name, "/doctors/#{doctor.id}") %>
+        <%= link_to(doctor.last_name, "/doctors/#{doctor.id}") %>
+        <% end %>
     </p>
 
     <p class="collection-item"><%= @service.description %></p>
-  </div>
+</div>
+
 <div class="controls">
-  <%= link_to("Edit", "/services/#{@service.id}/edit") %>
-  <%= link_to("Delete", "/services/#{@service.id}", method: :delete, data: { confirm: "Are you sure?" }) %>
+  <button class="btn waves-effect waves-light" type="button" name="action"><%= link_to("Delete", "/services/#{@service.id}", method: :delete, data: { confirm: "Are you sure?" }) %></button>
+    <button class="btn waves-effect waves-light" type="button" name="action"><%= link_to("Edit", "/services/#{@service.id}/edit") %></button>
 </div>

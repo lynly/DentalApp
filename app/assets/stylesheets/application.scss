@@ -1,20 +1,40 @@
 @import "materialize";
-
 body {
+  display: flex; // sticky footer materialize
+  min-height: 100vh; // sticky footer materialize
+  flex-direction: column; // sticky footer materialize
   font-size: 14px;
   color: #757575;
 }
+
+.main {
+  flex: 1 0 auto; // sticky footer materialize
+}
+
 
 h4 {
   color: #4db6ac;
 }
 
-
 a {
-    color: #757575;
+  color: #757575;
   text-decoration: none;
+}
+
+.btn a {
+  color: #fff;
 }
 
 nav {
   margin-bottom: 50px;
+}
+
+.btn {
+  margin: 1.14rem 0 0.912rem 0;
+  float: right;
+  margin-left: 10px;
+}
+
+footer {
+  margin-top: 100px;
 }
