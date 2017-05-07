@@ -7,6 +7,16 @@ body {
   color: #757575;
 }
 
+.login {
+  width: 370px;
+  margin: 0 auto;
+}
+
+.login .btn {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
 .main {
   flex: 1 0 auto; // sticky footer materialize
 }

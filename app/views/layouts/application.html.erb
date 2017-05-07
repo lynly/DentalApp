@@ -27,6 +27,13 @@
           </div>
         </nav>
 
+        <% if @current_doctor %>
+          Signed in as <%= @current_doctor.name %> | <%= link_to "Logout", '/logout' %>
+        <% else %>
+          <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+        <% end %>
+
+
 
         <div class="main">
             <div class="container">

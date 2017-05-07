@@ -1,4 +1,7 @@
 class ServicesController < ApplicationController
+  before_action :authorize_doctor, :except => [:index]
+  before_action :check_if_logged_out, only: [:new, :create]
+  before_action :check_if_logged_in, only: [:edit, :update]
 
   def index
     # Find all services
@@ -49,4 +52,19 @@ class ServicesController < ApplicationController
     def service_params
       params.require(:service).permit(:name, :description, :doctor_id, :category_id)
     end
+
+    def check_if_logged_out
+      if @current_user
+        flash[:error] = "You are already logged in"
+        redirect_to "/users"
+      end
+    end
+
+    def check_if_logged_in
+      unless @current_user
+        flash[:error] = "You need to be logged in for that"
+        redirect_to "/login"
+      end
+    end
+
 end

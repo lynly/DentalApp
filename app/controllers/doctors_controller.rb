@@ -15,7 +15,14 @@ class DoctorsController < ApplicationController
   def new
     # Shows a form
     @doctor = Doctor.new
-    @all_categories = Category.all
+    # @all_categories = Category.all
+    doctor = Doctor.new(doctor_params)
+      if doctor.save
+        session[:doctor_id] = doctor.id
+        redirect_to doctor_path(doctor)
+      else
+        redirect_to '/signup'
+      end
   end
 
   def create
@@ -33,7 +40,7 @@ class DoctorsController < ApplicationController
   def edit
     # Shows a form (with prefilled values)
     @doctor = Doctor.find_by(id: params["id"])
-    @all_categories = Category.all
+    # @all_categories = Category.all
 
   end
 
@@ -53,7 +60,7 @@ class DoctorsController < ApplicationController
 
   private
     def doctor_params
-      params.require(:doctor).permit(:first_name, :last_name, :gender, :qualification, :specialty, :service_id)
+      params.require(:doctor).permit(:first_name, :last_name, :gender, :qualification, :specialty, :service_id, :email, :password, :password_confirmation)
     end
 
 end

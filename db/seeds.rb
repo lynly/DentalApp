@@ -1,33 +1,4 @@
-Doctor.destroy_all
 
-d1 = Doctor.create({
-  first_name: "Roger",
-  last_name: "O’Sullivan",
-  gender: "Male",
-  qualification: "BDSc. (Syd. Uni.)",
-  specialty: "General Dentistry",
-  email: "r.osullivan@dentist.com.au"
-})
-
-d2 = Doctor.create({
-  first_name: "Lindsay",
-  last_name: "Williams",
-  gender: "Female",
-  qualification: "BDSc. (Hons)",
-  specialty: "Cosmetic Dentistry, Aesthetic Services",
-  email: "l.williams@dentist.com.au"
-})
-
-d3 = Doctor.create({
-  first_name: "Oliver",
-  last_name: "Harley",
-  gender: "Male",
-  qualification: "B.BioMol.Sc. (Hons I) BDSc. (Hons I) FICOI",
-  specialty: "General Dentistry, Cosmetic Dentistry, Implant Dentistry",
-  email: "o.harley@dentist.com.au"
-})
-
-puts "Doctor Count: #{ Doctor.all.count }"
 
 
 Service.destroy_all
@@ -67,27 +38,7 @@ We are skilled at analysing the proportions of the face, know how the individual
 s24 = Service.create(name: "Skin Microneedling", description: "Skin Microneedling works by stimulating your own body’s collagen formation. We use a dermastamp with fine needle penetration to enhance blood supply to the area and regenerate the skin below the dermis and also infuse collagen and growth factors from the platelet rich plasma deeper into the skin to generate more cell renewal. The depth of needle penetration can be adjusted depending on the skin rejuvenation levels required and can be targeted to the face and neck.")
 
 
-d1.services << s1 << s2 << s3 << s4 << s5 << s6
-d2.services << s7 << s8 << s9 << s10 << s11 << s23 << s24
-d3.services << s1 << s2 << s3 << s4 << s5 << s6 << s7 << s8 << s9 << s10 << s11 << s12 << s13 << s14 << s15
 
-s1.doctors << d1 << d3
-s2.doctors << d1 << d3
-s3.doctors << d1 << d3
-s4.doctors << d1 << d3
-s5.doctors << d1 << d3
-s6.doctors << d1 << d3
-s7.doctors << d2 << d3
-s8.doctors << d2 << d3
-s9.doctors << d2 << d3
-s10.doctors << d2 << d3
-s11.doctors << d2 << d3
-s12.doctors << d3
-s13.doctors << d3
-s14.doctors << d3
-s15.doctors << d3
-s23.doctors << d2
-s24.doctors << d2
 
 puts "Service Count: #{ Service.all.count }"
 
