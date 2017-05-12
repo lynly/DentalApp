@@ -12,6 +12,10 @@ body {
   margin: 0 auto;
 }
 
+.login h4, .login p {
+  text-align: center;
+}
+
 .login .btn {
   width: 100%;
   margin-bottom: 40px;
@@ -47,4 +51,8 @@ nav {
 
 footer {
   margin-top: 100px;
+}
+
+hr {
+  margin-bottom: 30px;
 }

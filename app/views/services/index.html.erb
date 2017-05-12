@@ -7,6 +7,11 @@
   </div>
 </div>
 
+<% if flash[:error] %>
+  <p>
+    <%= flash[:error] %>
+  </p>
+<% end %>
 
 <table class="highlight">
   <thead>

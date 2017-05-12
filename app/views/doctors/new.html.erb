@@ -1,13 +1,21 @@
-<h1>Signup</h1>
+<div class="login">
+  <h4>Signup</h4>
 
-<%= form_for :doctor, url: '/doctors' do |f| %>
+  <% if flash[:error] %>
+    <p>
+      <%= flash[:error] %>
+    </p>
+  <% end %>
 
-  Name: <%= f.text_field :name %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
+  <%= form_for :doctor, url: '/doctors' do |f| %>
 
+    <%= f.text_field :first_name, placeholder: 'First Name' %>
+    <%= f.text_field :last_name, placeholder: 'Last Name' %>
+    <%= f.text_field :email, placeholder: 'Email'  %>
+    <%= f.password_field :password, placeholder: 'Password:' %>
+    <%= f.password_field :password_confirmation, placeholder: 'Password Confirmation' %>
 
-  <button class="btn waves-effect waves-light" type="submit" name="action"><%= f.submit "Submit" %></button>
+  <%= button_tag "Sign Up", :class => "btn waves-effect waves-light" %>
 
-<% end %>
+  <% end %>
+</div>

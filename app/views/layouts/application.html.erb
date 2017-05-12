@@ -11,29 +11,38 @@
 
     <body>
         <nav class="teal lighten-3">
-          <div class="container">
-             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">Logo</a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                  <li><%= link_to "Services", "/services" %></li>
-                  <li><%= link_to "Doctors", "/doctors" %></li>
-                </ul>
-                <ul class="side-nav" id="mobile-demo">
-                  <li><%= link_to "Services", "/services" %></li>
-                  <li><%= link_to "Doctors", "/doctors" %></li>
-                </ul>
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="/" class="brand-logo">DoctorApp</a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse">
+                        <i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><%= link_to "Services", "/services" %></li>
+                        <li><%= link_to "Doctors", "/doctors" %></li>
+                        <li>
+                            <% if @current_doctor %>
+                            <%#= link_to( @current_doctor.first_name, "/doctors/#{@doctor.id}" ) %>
+                            <%= @current_doctor.first_name %>
+                        <% else %>
+                            <%= link_to 'Login', '/login' %>
+                            <% end %>
+                        </li>
+                        <li>
+                            <% if @current_doctor %>
+                            <%= link_to "Logout", '/logout' %>
+                        <% else %>
+                            <%= link_to 'Signup', '/signup' %>
+                            <% end %>
+                        </li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><%= link_to "Services", "/services" %></li>
+                        <li><%= link_to "Doctors", "/doctors" %></li>
+                    </ul>
+                </div>
+
             </div>
-          </div>
         </nav>
-
-        <% if @current_doctor %>
-          Signed in as <%= @current_doctor.name %> | <%= link_to "Logout", '/logout' %>
-        <% else %>
-          <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-        <% end %>
-
-
 
         <div class="main">
             <div class="container">
@@ -69,7 +78,7 @@
             </div>
             <div class="footer-copyright">
                 <div class="container">
-                    © 2014 Copyright Text
+                    © 2017 Copyright
                     <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
                 </div>
             </div>

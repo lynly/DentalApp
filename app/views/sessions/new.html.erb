@@ -1,24 +1,22 @@
 <div class="login">
   <h4>Login</h4>
 
-  <% if flash[:login_error] %>
+  <% if flash[:error] %>
     <p>
-      <%= flash[:login_error] %>
+      <%= flash[:error] %>
     </p>
   <% end %>
 
-
   <%= form_tag '/login' do %>
-
-    <%= text_field_tag :email, nil, placeholder: 'Email' %>
-    <%= password_field_tag :password, nil, placeholder: 'Password' %>
-
-    <button class="btn waves-effect waves-light" type="submit" name="action"><%= submit_tag "Log In" %></button>
-
+      <%= text_field_tag :email, nil, placeholder: 'Email' %>
+      <%= password_field_tag :password, nil, placeholder: 'Password' %>
+    <%= button_tag "Login", :class => "btn waves-effect waves-light" %>
   <% end %>
 
     <hr>
 
-    <button class="btn waves-effect waves-light" type="submit" name="action"><%= link_to "Sign Up", "/signup" %></button>
+  <p>New to the DoctorApp? Register now.</p>
+  <%= link_to 'Sign Up', '/signup', :class => "btn waves-effect waves-light" %>
+
 
 </div>

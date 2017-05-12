@@ -17,6 +17,8 @@ class ApplicationController < ActionController::Base
 
 
   def authorize_doctor
+    flash[:error] = "You need to be logged in for that"
     redirect_to '/signup' unless @current_doctor.present?
   end
+  
 end
