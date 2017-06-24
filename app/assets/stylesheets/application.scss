@@ -40,9 +40,6 @@ a {
   color: #fff;
 }
 
-nav {
-  // margin-bottom: 50px;
-}
 
 .btn {
   margin: 1.14rem 0 0.912rem 0;
@@ -50,18 +47,11 @@ nav {
   margin-left: 10px;
 }
 
-// footer {
-//   margin-top: 100px;
-// }
 
 hr {
   margin-bottom: 30px;
 }
 
 .carousel.carousel-slider.initialized {
-  min-height: 57vh !important;
-}
-
-.carousel .carousel-item  img {
-
+  height: 57vh !important;
 }
