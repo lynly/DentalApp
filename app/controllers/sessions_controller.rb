@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
      if doctor.present? && doctor.authenticate(params[:password])
        # If a doctor record with the entered in the form is present AND the doctor is authenticated (using bcrypt's authenticate method and the password entered in the form), store their id in the session hash and redirect them to the root path.
        session[:doctor_id] = doctor.id
-       redirect_to show_doctors_path(doctor)
+       redirect_to doctor_path(doctor)
      else
        # If the doctor cannot be authenticated, redirect them to the login_path.
        flash[:error] = "We're sorry, information required for one or more fields is missing or incorrect. Please try again."

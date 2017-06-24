@@ -2,16 +2,15 @@
   <div class="col s9">
     <h4>What we do</h4>
   </div>
+
   <div class="col s3">
-    <a class="waves-effect waves-light btn" href="/services/new">New Service</a>
+    <% if @current_doctor %>
+      <a class="waves-effect waves-light z-depth-0 btn" href="/services/new">New Service</a>
+    <% end %>
   </div>
+
 </div>
 
-<% if flash[:error] %>
-  <p>
-    <%= flash[:error] %>
-  </p>
-<% end %>
 
 <table class="highlight">
   <thead>
@@ -26,8 +25,10 @@
       <tr>
         <td><%= link_to(service.name, "/services/#{service.id}") %></td>
         <td><%= service.category.name %></td>
+      <% if @current_doctor %>
         <td><%= link_to "Edit", edit_service_path(service) %></td>
         <td><%= link_to("Delete", service, method: :delete, data: { confirm: "Are you sure?" }) %></td>
+      <% end %>
       </tr>
     <% end %>
   <tbody>

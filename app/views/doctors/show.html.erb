@@ -11,7 +11,9 @@
 </ul>
 
 
-<div class="controls">
-  <button class="btn waves-effect waves-light" type="button" name="action"><%= link_to("Delete", "/doctors/#{@doctor.id}", method: :delete, data: { confirm: "Are you sure?" }) %></button>
-    <button class="btn waves-effect waves-light" type="button" name="action"><%= link_to("Edit", "/doctors/#{@doctor.id}/edit") %></button>
-</div>
+  <div class="controls">
+    <% if @current_doctor && @current_doctor.id == @doctor.id  %>
+      <button class="btn waves-effect waves-light z-depth-0" type="button" name="action"><%= link_to("Delete", "/doctors/#{@doctor.id}", method: :delete, data: { confirm: "Are you sure?" }) %></button>
+        <button class="btn waves-effect waves-light z-depth-0" type="button" name="action"><%= link_to("Edit", "/doctors/#{@doctor.id}/edit") %></button>
+    <% end %>
+  </div>

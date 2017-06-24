@@ -10,7 +10,7 @@
     </head>
 
     <body>
-        <nav class="teal lighten-3">
+        <nav class="teal lighten-3 z-depth-0 ">
             <div class="container">
                 <div class="nav-wrapper">
                     <a href="/" class="brand-logo">DoctorApp</a>
@@ -19,21 +19,15 @@
                     <ul class="right hide-on-med-and-down">
                         <li><%= link_to "Services", "/services" %></li>
                         <li><%= link_to "Doctors", "/doctors" %></li>
-                        <li>
-                            <% if @current_doctor %>
-                            <%#= link_to( @current_doctor.first_name, "/doctors/#{@doctor.id}" ) %>
-                            <%= @current_doctor.first_name %>
-                        <% else %>
-                            <%= link_to 'Login', '/login' %>
-                            <% end %>
-                        </li>
-                        <li>
-                            <% if @current_doctor %>
-                            <%= link_to "Logout", '/logout' %>
-                        <% else %>
-                            <%= link_to 'Signup', '/signup' %>
-                            <% end %>
-                        </li>
+
+                        <% if @current_doctor %>
+                            <li><%= link_to "Logout", '/logout' %></li>
+                            <li><a href= "<%= doctor_path(@current_doctor) %>"><%= @current_doctor.first_name %></a></li>
+
+                      <% else %>
+                            <li><%= link_to 'Login', '/login' %></li>
+                            <li><%= link_to 'Signup', '/signup' %></li>
+                      <% end %>
                     </ul>
                     <ul class="side-nav" id="mobile-demo">
                         <li><%= link_to "Services", "/services" %></li>

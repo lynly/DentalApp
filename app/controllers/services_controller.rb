@@ -1,7 +1,4 @@
 class ServicesController < ApplicationController
-  before_action :authorize_doctor, :except => [:index]
-
-
   def index
     # Find all services
     @all_services = Service.all
@@ -51,5 +48,5 @@ class ServicesController < ApplicationController
     def service_params
       params.require(:service).permit(:name, :description, :doctor_id, :category_id)
     end
-    
+
 end
