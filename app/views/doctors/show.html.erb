@@ -1,19 +1,22 @@
-<h4>Dr: <%= @doctor.first_name %> <%= @doctor.last_name %></h4>
+<div class="container">
+  <h4>Dr: <%= @doctor.first_name %> <%= @doctor.last_name %></h4>
 
-<ul class="collection">
-  <li class="collection-item"><strong>Gender:</strong> <%= @doctor.gender %></li>
-  <li class="collection-item"><strong>Qualification:</strong> <%= @doctor.qualification %></li>
-  <li class="collection-item"><strong>Specialty:</strong>
-    <% @doctor.categories.uniq.each do |category| %>
-      <%= link_to category.name, services_path %>
-    <% end %>
-  </li>
-</ul>
+  <ul class="collection">
+    <li class="collection-item"><strong>Gender:</strong> <%= @doctor.gender %></li>
+    <li class="collection-item"><strong>Qualification:</strong> <%= @doctor.qualification %></li>
+    <li class="collection-item"><strong>Specialty:</strong>
+      <% @doctor.categories.uniq.each do |category| %>
+        <%= link_to category.name, services_path %>
+      <% end %>
+    </li>
+  </ul>
 
 
-  <div class="controls">
-    <% if @current_doctor && @current_doctor.id == @doctor.id  %>
-      <button class="btn waves-effect waves-light z-depth-0" type="button" name="action"><%= link_to("Delete", "/doctors/#{@doctor.id}", method: :delete, data: { confirm: "Are you sure?" }) %></button>
-        <button class="btn waves-effect waves-light z-depth-0" type="button" name="action"><%= link_to("Edit", "/doctors/#{@doctor.id}/edit") %></button>
-    <% end %>
-  </div>
+    <div class="controls">
+      <% if @current_doctor && @current_doctor.id == @doctor.id  %>
+        <button class="btn waves-effect waves-light z-depth-0" type="button" name="action"><%= link_to("Delete", "/doctors/#{@doctor.id}", method: :delete, data: { confirm: "Are you sure?" }) %></button>
+          <button class="btn waves-effect waves-light z-depth-0" type="button" name="action"><%= link_to("Edit", "/doctors/#{@doctor.id}/edit") %></button>
+      <% end %>
+    </div>
+
+</div>

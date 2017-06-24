@@ -28,6 +28,7 @@ body {
 
 h4 {
   color: #4db6ac;
+  margin-top: 50px;
 }
 
 a {
@@ -40,7 +41,7 @@ a {
 }
 
 nav {
-  margin-bottom: 50px;
+  // margin-bottom: 50px;
 }
 
 .btn {
@@ -49,10 +50,18 @@ nav {
   margin-left: 10px;
 }
 
-footer {
-  margin-top: 100px;
-}
+// footer {
+//   margin-top: 100px;
+// }
 
 hr {
   margin-bottom: 30px;
+}
+
+.carousel.carousel-slider.initialized {
+  min-height: 57vh !important;
+}
+
+.carousel .carousel-item  img {
+
 }
