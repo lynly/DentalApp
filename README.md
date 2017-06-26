@@ -1,24 +1,37 @@
-# README
+# WIREFRAME
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Very often patients would like to be more informed when selecting a doctor for a particular procedure. So they could find a doctor who is best suited to their current needs. 
 
-Things you may want to cover:
+I wanted to develop a web application that allowed doctors to easily update their information so that patients can find out more about what they do best.
 
-* Ruby version
+https://dental-portal.herokuapp.com/
 
-* System dependencies
+## Features
+* User Sessions & authentication
+* CRUD Services
+* CRUD Doctors
 
-* Configuration
 
-* Database creation
+#### Web application framework
+* Rails v 5.0.2
+* Ruby v 2.4.1
 
-* Database initialization
+#### Libraries
+* Materialize - css styling
 
-* How to run the test suite
+#### Gems
+* Bcrypt - authentication.
+* materialize sass - css styling
 
-* Services (job queues, cache servers, search engines, etc.)
+## Installation
+1. bundle
+2. rake db:create
+3. rake db:migrate
+4. rake db:seed
+5. rails s
 
-* Deployment instructions
-
-* ...
+## Future Releases
+* Add Patient model
+* Allow messaging between Doctors and Patients
+* Access Patient information
+* Make bookings
